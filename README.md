@@ -30,8 +30,7 @@ public class ProductsController : ControllerBase
 ```
 ### Beispiel für POST Anfrage mittels curl:
 ```sh
-curl -X POST \                                        
-  http://localhost:5076/api/products \
+curl -X POST http://localhost:5076/api/products \
   -H 'Content-Type: application/json' \
   -d '{
     "Id": 2,

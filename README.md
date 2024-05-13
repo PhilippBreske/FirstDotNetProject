@@ -39,6 +39,16 @@ curl -X POST \
     "Price": 9.99
 }'
 
+curl -X POST \                                        
+  http://localhost:5076/api/products \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "Id": 1,
+    "Name": "Example Product",
+    "Price": 9.99                                                                                                  
+}'
+
+
 ```
 ### Beispiel für DELETE Anfrage mittels curl:
 ```sh
@@ -81,7 +91,15 @@ public ProductsController(ProductHolder productHolder){
 [HttpGet]
 public IActionResult GetProducts(){
     var products = _productHolder.GetProducts();
-    return Ok(products);
+    return Ok(products);curl -X POST \                                        
+  http://localhost:5076/api/products \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "Id": 1,
+    "Name": "Example Product",
+    "Price": 9.99                                                                                                  
+}'
+
 }
 
 . . .

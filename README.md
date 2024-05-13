@@ -30,14 +30,15 @@ public class ProductsController : ControllerBase
 ```
 ### Beispiel für POST Anfrage mittels curl:
 ```sh
-curl -X POST \                                       
+curl -X POST \                                        
   http://localhost:5076/api/products \
   -H 'Content-Type: application/json' \
   -d '{
     "Id": 2,
-    "Name": "test 1",
-    "Price": 27.99
+    "Name": "Example Product",
+    "Price": 9.99
 }'
+
 ```
 ### Beispiel für DELETE Anfrage mittels curl:
 ```sh

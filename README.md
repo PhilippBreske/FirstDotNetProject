@@ -38,8 +38,7 @@ curl -X POST http://localhost:5076/api/products \
     "Price": 9.99
 }'
 
-curl -X POST \                                        
-  http://localhost:5076/api/products \
+curl -X POST http://localhost:5076/api/products \
   -H 'Content-Type: application/json' \
   -d '{
     "Id": 1,

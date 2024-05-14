@@ -95,6 +95,12 @@ public IActionResult GetProducts(){
 . . .
 ```
 
+#### Docker:
+```Shell
+docker build --rm -t dep-injection-test . 
+docker run -p 5076:8080 dep-injection-test -e
+```
+
 ## Quellen:
 #### dependency injection:
 - https://positiwise.com/blog/dependency-injection-in-net-core-with-example

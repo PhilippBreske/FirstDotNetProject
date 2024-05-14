@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 // Make the ProductHolder class available for dependency injection
-builder.Services.AddSingleton<ProductHolder>();
+builder.Services.AddSingleton<IProductHolders,ProductHolder>();
 
 var app = builder.Build();
 

@@ -2,7 +2,7 @@ namespace WebApplication1.Models;
 
 
 //Database simulation class for products
-public class ProductHolder {
+public class ProductHolder : IProductHolders{
     //underscore is a naming convention for private fields
     private readonly List<Product> _products;
     

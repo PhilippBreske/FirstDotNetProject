@@ -7,10 +7,10 @@ namespace WebApplication1.Controllers;
 public class ProductsController : ControllerBase
 {
     
-    private readonly ProductHolder _productHolder;
+    private readonly IProductHolders _productHolder;
     
     //dependency injection of ProductHolder
-    public ProductsController(ProductHolder productHolder){
+    public ProductsController(IProductHolders productHolder){
         _productHolder = productHolder;
     }
     

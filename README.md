@@ -69,7 +69,7 @@ ProductHolder als MockUp für Datenbank
 . . .
 
 // Make the ProductHolder class available for dependency injection
-builder.Services.AddSingleton<ProductHolder>();
+builder.Services.AddSingleton<IProductHolders,ProductHolder>();
 
 . . .
 ```

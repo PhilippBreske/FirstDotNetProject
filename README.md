@@ -78,12 +78,12 @@ builder.Services.AddSingleton<ProductHolder>();
 ```C#
 . . .
 
-private readonly ProductHolder _productHolder;
+private readonly IProductHolders _productHolder;
     
 //dependency injection of ProductHolder
-public ProductsController(ProductHolder productHolder){
-    _productHolder = productHolder;
-}
+public ProductsController(IProductHolders productHolder){
+        _productHolder = productHolder;
+    }
 
 //show all products
 [HttpGet]

@@ -1,13 +1,15 @@
-namespace WebApplication1.Models;
+using ExampleApplication.Domain.ProductModels;
+
+namespace ExampleApplication.Infrastructure.ProductDataHolders;
 
 
 //Database simulation class for products
-public class ProductHolder : IProductHolders{
+public class ProductDataHolder{
     //underscore is a naming convention for private fields
     private readonly List<Product> _products;
     
     //initialize the list with a single product
-    public ProductHolder() {
+    public ProductDataHolder() {
         _products = new List<Product>{
             new Product {
                 Id = 1, Name = "Product 1", Price = 10.0 
@@ -21,7 +23,7 @@ public class ProductHolder : IProductHolders{
     }
     
     //return all products
-    public List<Product> GetProducts() {
+    public IEnumerable<Product> GetProducts() {
         return _products;
     }
     

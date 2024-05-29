@@ -1,7 +1,5 @@
-namespace WebApplication1.Models;
+namespace ExampleApplication.Domain.ProductModels;
 
-
-//Product object
 public class Product
 {
     public int Id { get; set; }

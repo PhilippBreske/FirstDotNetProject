@@ -1,4 +1,4 @@
-*/obj/
-*/bin/
-.idea/*
+**/obj/
+**/bin/
+**/.idea/
 WebApplication1/obj/Debug/net8.0/WebApplication1.AssemblyInfo.cs

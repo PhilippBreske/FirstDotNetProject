@@ -3,6 +3,7 @@ using ExampleApplication.Infrastructure.Products;
 using ExampleApplication.Infrastructure.ProductDataHolders;
 using ExampleApplication.Application;
 using ExampleApplication.Application.Products;
+using ExampleApplication.Infrastructure;
 using MediatR;
 
 
@@ -14,9 +15,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<IProductHolder, ProductHolder>();
-builder.Services.AddSingleton<ProductDataHolder>();
+
+builder.Services.AddInfrastructureDependencies();
 builder.Services.AddApplicationDependencies();
+
 var app = builder.Build();
 
 

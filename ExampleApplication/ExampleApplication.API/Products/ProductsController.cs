@@ -17,11 +17,12 @@ public class ProductsController : ControllerBase
     }
     //show all products
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Product>>> GetAllProducts()
+    public async Task<ActionResult<IEnumerable<ProductResponse>>> GetAllProducts()
     {
         var query = new GetAllProductsQuery();
         var products = await _mediator.Send(query);
-        return Ok(products);
+        var response = products.Select(p => new ProductResponse{ Name = p.Name, Price = p.Price});
+        return Ok(response);
     }
 
     //show product by ID
@@ -30,15 +31,16 @@ public class ProductsController : ControllerBase
     {
         var query = new GetProductByIdQuery(id);
         var product = await _mediator.Send(query);
-        return Ok(product);
+        return Ok(new ProductResponse{Name = product.Name, Price = product.Price});
     }
 
     //create new product
-    [HttpPost]
-    public async Task<ActionResult> CreateProduct([FromBody] Product product)
+    [HttpPost ("{nid:int}/{nname}/{nprice:double}")]
+    public async Task<ActionResult> CreateProduct(int nid, string nname, double nprice)
     {
+        var product = new Product {Id = nid, Name = nname, Price = nprice};
         var query = new AddProductCommand(product);
         var answer = await _mediator.Send(query);
-        return Ok();
+        return Ok(new ProductResponse{Name = product.Name, Price = product.Price});
     }
 }
